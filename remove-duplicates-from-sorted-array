@@ -1,0 +1,27 @@
+/*https://leetcode.com/problems/remove-duplicates-from-sorted-array/*/
+
+import java.util.Collections;
+import java.util.Arrays;
+class Solution {
+    
+    public int removeDuplicates(int[] nums)     {
+        int max, k = 0;
+       // int min = nums[0];
+        if(nums.length == 0)
+            return 0;
+        else
+        max = nums[nums.length-1];
+       for(int i = 0; (i < nums.length); i++)
+       {
+          if(i != nums.length-1)
+           if((nums[i] == nums[i+1]))
+             nums[i] = max+1;
+           
+           if(nums[i] != max+1)
+            nums[k++] = nums[i];
+       }
+      
+    return k;
+    
+    }
+}
